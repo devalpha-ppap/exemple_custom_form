@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New User{% endblock %}
+
+{% block body %}
+    <h1>Create new User</h1>
+
+    <form action="{{ path('user_store') }}" method="post">
+        <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" name="password">
+        </div>
+        <div class="mb-3">
+            <label for="libelle" class="form-label">Libelle</label>
+            <input type="text" class="form-control" id="libelle" name="libelle">
+        </div>
+        <div class="mb-3">
+            <label for="cp" class="form-label">Code Postal</label>
+            <input type="text" class="form-control" id="cp" name="cp">
+        </div>
+        <div class="mb-3">
+            <label for="ville" class="form-label">Ville</label>
+            <input type="text" class="form-control" id="ville" name="ville">
+        </div>
+        <button type="submit" class="btn btn-primary">Envoyer</button>
+    </form>
+{#    {{ include('user/_form.html.twig') }}#}
+
+    <a href="{{ path('user_index') }}">back to list</a>
+{% endblock %}
